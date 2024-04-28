@@ -1,5 +1,7 @@
 # NiceHoverView
 
+![macOS 13.0](https://img.shields.io/badge/macOS-13.0-brightgreen.svg)
+
 NiceHoverView is an elegant, customizable NSView subclass for macOS that adds smooth hover effects to enhance the interactivity of user interfaces in macOS applications.
 
 ## Introduction

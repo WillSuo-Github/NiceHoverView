@@ -1,13 +1,13 @@
 //
-//  NiceHoverTableRowView.swift
-//  NiceHoverViewExample
+//  File.swift
+//  
 //
 //  Created by will Suo on 2024/4/29.
 //
 
 import AppKit
 
-open class NiceHoverTableRowView: NSTableRowView {
+open class NiceHoverTableCellView: NSTableCellView {
     private lazy var hoverHelper = HoverHelper(hoverLayer: hoverLayer)
     
     private lazy var hoverLayer: CAShapeLayer = {
@@ -50,10 +50,10 @@ open class NiceHoverTableRowView: NSTableRowView {
 }
 
 // MARK: - HoverProtocol
-extension NiceHoverTableRowView: HoverProtocol { }
+extension NiceHoverTableCellView: HoverProtocol { }
 
 // MARK: - Tracking Area
-extension NiceHoverTableRowView {
+extension NiceHoverTableCellView {
     public override func updateTrackingAreas() {
         if let tracking = hoverHelper.trackingArea {
             removeTrackingArea(tracking)

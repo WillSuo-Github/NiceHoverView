@@ -6,12 +6,14 @@
 //
 
 import Cocoa
+import SnapKit
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet var window: NSWindow!
-    private let hoverView = CustomHoverView(frame: NSRect(x: 100, y: 100, width: 100, height: 100))
+    private let hoverView = CustomHoverView(frame: .zero)
+    private let customTableViewController = CustomTableViewController()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         guard let contentView = window.contentView else { return }
@@ -19,6 +21,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         hoverView.layer?.cornerRadius = 20
         hoverView.layer?.backgroundColor = NSColor.white.cgColor
         contentView.addSubview(hoverView)
+        hoverView.snp.makeConstraints { make in
+            make.top.centerX.equalToSuperview()
+            make.height.width.equalTo(100)
+        }
+        
+        contentView.addSubview(customTableViewController.view)
+        customTableViewController.view.snp.makeConstraints { make in
+            make.left.bottom.width.equalToSuperview()
+            make.top.equalTo(hoverView.snp.bottom)
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

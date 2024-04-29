@@ -1,6 +1,13 @@
+//
+//  NiceHoverTableRowView.swift
+//  NiceHoverViewExample
+//
+//  Created by will Suo on 2024/4/29.
+//
+
 import AppKit
 
-open class NiceHoverView: NSView {
+open class NiceHoverTableRowView: NSTableRowView {
     private lazy var hoverHelper = HoverHelper(hoverLayer: hoverLayer)
     
     private lazy var hoverLayer: CAShapeLayer = {
@@ -12,6 +19,7 @@ open class NiceHoverView: NSView {
     }()
     
     open override func mouseEntered(with event: NSEvent) {
+        print("mouseEntered")
         hoverHelper.showHoverLayer(with: event, onView: self)
     }
     
@@ -34,19 +42,19 @@ open class NiceHoverView: NSView {
     }
     
     open func xRadius() -> CGFloat {
-        return 20
+        return 6
     }
     
     open func yRadius() -> CGFloat {
-        return 20
+        return 6
     }
 }
 
 // MARK: - HoverProtocol
-extension NiceHoverView: HoverProtocol { }
+extension NiceHoverTableRowView: HoverProtocol { }
 
 // MARK: - Tracking Area
-extension NiceHoverView {
+extension NiceHoverTableRowView {
     public override func updateTrackingAreas() {
         if let tracking = hoverHelper.trackingArea {
             removeTrackingArea(tracking)
@@ -58,4 +66,3 @@ extension NiceHoverView {
         hoverHelper.triggerMouseExit(onView: self)
     }
 }
-

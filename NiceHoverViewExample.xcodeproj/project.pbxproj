@@ -13,6 +13,13 @@
 		34520A5B2BDE6C5A0090A411 /* CustomHoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34520A5A2BDE6C5A0090A411 /* CustomHoverView.swift */; };
 		34520A602BDE72180090A411 /* BezierPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34520A5C2BDE72180090A411 /* BezierPathExtension.swift */; };
 		34520A612BDE72180090A411 /* NiceHoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34520A5D2BDE72180090A411 /* NiceHoverView.swift */; };
+		34BD73632BDE93050043D424 /* HoverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BD73622BDE93050043D424 /* HoverProtocol.swift */; };
+		34BD73652BDE93A40043D424 /* HoverHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BD73642BDE93A40043D424 /* HoverHelper.swift */; };
+		34FA94BA2BDF8A5000969EF3 /* NiceHoverTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FA94B92BDF8A5000969EF3 /* NiceHoverTableRowView.swift */; };
+		34FA94BC2BDF8B2300969EF3 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FA94BB2BDF8B2300969EF3 /* CustomTableViewController.swift */; };
+		34FA94BE2BDF8C7E00969EF3 /* CustomTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FA94BD2BDF8C7E00969EF3 /* CustomTableRowView.swift */; };
+		34FA94C12BDF8DFF00969EF3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 34FA94C02BDF8DFF00969EF3 /* SnapKit */; };
+		34FA94C52BDF8EBE00969EF3 /* CustomTableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FA94C42BDF8EBE00969EF3 /* CustomTableCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +31,12 @@
 		34520A5A2BDE6C5A0090A411 /* CustomHoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHoverView.swift; sourceTree = "<group>"; };
 		34520A5C2BDE72180090A411 /* BezierPathExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPathExtension.swift; sourceTree = "<group>"; };
 		34520A5D2BDE72180090A411 /* NiceHoverView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NiceHoverView.swift; sourceTree = "<group>"; };
+		34BD73622BDE93050043D424 /* HoverProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverProtocol.swift; sourceTree = "<group>"; };
+		34BD73642BDE93A40043D424 /* HoverHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoverHelper.swift; sourceTree = "<group>"; };
+		34FA94B92BDF8A5000969EF3 /* NiceHoverTableRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NiceHoverTableRowView.swift; sourceTree = "<group>"; };
+		34FA94BB2BDF8B2300969EF3 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
+		34FA94BD2BDF8C7E00969EF3 /* CustomTableRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableRowView.swift; sourceTree = "<group>"; };
+		34FA94C42BDF8EBE00969EF3 /* CustomTableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34FA94C12BDF8DFF00969EF3 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +73,9 @@
 				34520A5F2BDE72180090A411 /* Sources */,
 				34520A4A2BDD1A9D0090A411 /* AppDelegate.swift */,
 				34520A5A2BDE6C5A0090A411 /* CustomHoverView.swift */,
+				34FA94BB2BDF8B2300969EF3 /* CustomTableViewController.swift */,
+				34FA94BD2BDF8C7E00969EF3 /* CustomTableRowView.swift */,
+				34FA94C42BDF8EBE00969EF3 /* CustomTableCellView.swift */,
 				34520A4C2BDD1A9E0090A411 /* Assets.xcassets */,
 				34520A4E2BDD1A9E0090A411 /* MainMenu.xib */,
 				34520A512BDD1A9E0090A411 /* NiceHoverViewExample.entitlements */,
@@ -71,6 +88,9 @@
 			children = (
 				34520A5C2BDE72180090A411 /* BezierPathExtension.swift */,
 				34520A5D2BDE72180090A411 /* NiceHoverView.swift */,
+				34FA94B92BDF8A5000969EF3 /* NiceHoverTableRowView.swift */,
+				34BD73642BDE93A40043D424 /* HoverHelper.swift */,
+				34BD73622BDE93050043D424 /* HoverProtocol.swift */,
 			);
 			path = NiceHoverView;
 			sourceTree = "<group>";
@@ -100,6 +120,7 @@
 			);
 			name = NiceHoverViewExample;
 			packageProductDependencies = (
+				34FA94C02BDF8DFF00969EF3 /* SnapKit */,
 			);
 			productName = NiceHoverViewExample;
 			productReference = 34520A472BDD1A9D0090A411 /* NiceHoverViewExample.app */;
@@ -130,6 +151,7 @@
 			);
 			mainGroup = 34520A3E2BDD1A9D0090A411;
 			packageReferences = (
+				34FA94BF2BDF8DFF00969EF3 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 34520A482BDD1A9D0090A411 /* Products */;
 			projectDirPath = "";
@@ -157,8 +179,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34BD73652BDE93A40043D424 /* HoverHelper.swift in Sources */,
+				34BD73632BDE93050043D424 /* HoverProtocol.swift in Sources */,
+				34FA94BE2BDF8C7E00969EF3 /* CustomTableRowView.swift in Sources */,
 				34520A612BDE72180090A411 /* NiceHoverView.swift in Sources */,
 				34520A5B2BDE6C5A0090A411 /* CustomHoverView.swift in Sources */,
+				34FA94BC2BDF8B2300969EF3 /* CustomTableViewController.swift in Sources */,
+				34FA94C52BDF8EBE00969EF3 /* CustomTableCellView.swift in Sources */,
+				34FA94BA2BDF8A5000969EF3 /* NiceHoverTableRowView.swift in Sources */,
 				34520A4B2BDD1A9D0090A411 /* AppDelegate.swift in Sources */,
 				34520A602BDE72180090A411 /* BezierPathExtension.swift in Sources */,
 			);
@@ -376,6 +404,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		34FA94BF2BDF8DFF00969EF3 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		34FA94C02BDF8DFF00969EF3 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34FA94BF2BDF8DFF00969EF3 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 34520A3F2BDD1A9D0090A411 /* Project object */;
 }

@@ -22,7 +22,7 @@ Use SMP To integrate NiceHoverView into your macOS project
 
 ## Usage
 
-# For NSView
+### For NSView
 To use NiceHoverView in your application, follow these simple steps:
 
 ```swift
@@ -52,7 +52,7 @@ yourParentView.addSubview(customView)
 
 ```
 
-# For NSTableRowView
+### For NSTableRowView
 ```swift
 import NiceHoverView
 

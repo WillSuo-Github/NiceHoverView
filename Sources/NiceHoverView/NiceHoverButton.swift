@@ -8,7 +8,7 @@
 import AppKit
 
 open class NiceHoverButton: NSButton {
-    private lazy var hoverHelper = HoverHelper(hoverLayer: hoverLayer)
+    public lazy var hoverHelper = HoverHelper(hoverLayer: hoverLayer)
     
     private lazy var hoverLayer: CAShapeLayer = {
         let layer = CAShapeLayer()

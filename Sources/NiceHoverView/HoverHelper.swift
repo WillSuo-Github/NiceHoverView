@@ -8,7 +8,7 @@
 import AppKit
 
 open class HoverHelper: NSObject {
-    var isMouseIn: Bool = false
+    open private(set) var isMouseIn: Bool = false
     
     var hoverLayer: CAShapeLayer
     

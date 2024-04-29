@@ -6,7 +6,8 @@ NiceHoverView is an elegant, customizable NSView subclass for macOS that adds sm
 
 ## Introduction
 
-https://github.com/WillSuo-Github/NiceHoverView/assets/15070906/b13122c0-2f01-4f6d-b636-c3fa5d7f430b
+https://github.com/WillSuo-Github/NiceHoverView/assets/15070906/51c25190-7348-4e43-affb-2cc6c1fde574
+
 
 
 ## Features

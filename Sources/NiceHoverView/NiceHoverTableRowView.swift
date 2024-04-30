@@ -19,10 +19,12 @@ open class NiceHoverTableRowView: NSTableRowView {
     }()
     
     open override func mouseEntered(with event: NSEvent) {
+        updateLayer()
         hoverHelper.showHoverLayer(with: event, onView: self)
     }
     
     open override func mouseExited(with event: NSEvent) {
+        updateLayer()
         hoverHelper.hideHoverLayer(with: event, onView: self)
     }
     

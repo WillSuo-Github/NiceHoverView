@@ -19,17 +19,24 @@ open class NiceHoverTableCellView: NSTableCellView {
     }()
     
     open override func mouseEntered(with event: NSEvent) {
+        updateHoverColor()
         hoverHelper.showHoverLayer(with: event, onView: self)
     }
     
     open override func mouseExited(with event: NSEvent) {
+        updateHoverColor()
         hoverHelper.hideHoverLayer(with: event, onView: self)
     }
     
     open override func updateLayer() {
         super.updateLayer()
-        
-        hoverLayer.fillColor = hoverColor().cgColor
+        updateHoverColor()
+    }
+    
+    private func updateHoverColor() {
+        NSApplication.shared.effectiveAppearance.performAsCurrentDrawingAppearance {
+            hoverLayer.fillColor = hoverColor().cgColor
+        }
     }
     
     open func hoverColor() -> NSColor {

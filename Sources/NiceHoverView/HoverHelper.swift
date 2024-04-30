@@ -34,11 +34,11 @@ open class HoverHelper: NSObject {
         removeAllHoverLayerAnimations(hoverLayer: hoverLayer)
         
         let centerPoint = CGPoint(x: onView.bounds.midX, y: onView.bounds.midY)
-        let rawDeltaX = (centerPoint.x - entryPoint.x) / 2
-        let rawDeltaY = (centerPoint.y - entryPoint.y) / 2
+        let rawDeltaXRate = (centerPoint.x - entryPoint.x) / (onView.bounds.width / 2)
+        let rawDeltaYRate = (centerPoint.y - entryPoint.y) / (onView.bounds.height / 2)
         
-        let deltaX = max(-10, min(10, rawDeltaX))
-        let deltaY = max(-10, min(10, rawDeltaY))
+        let deltaX = 10 * rawDeltaXRate
+        let deltaY = 10 * rawDeltaYRate
         
         hoverLayer.position = CGPoint(x: -deltaX, y: -deltaY)
         
@@ -66,8 +66,11 @@ open class HoverHelper: NSObject {
             removeAllHoverLayerAnimations(hoverLayer: hoverLayer)
             
             let centerPoint = CGPoint(x: onView.bounds.midX, y: onView.bounds.midY)
-            let deltaX = (exitPoint.x - centerPoint.x) / 5
-            let deltaY = (exitPoint.y - centerPoint.y) / 5
+            let rawDeltaXRate = (exitPoint.x - centerPoint.x) / (onView.bounds.width / 2)
+            let rawDeltaYRate = (exitPoint.y - centerPoint.y) / (onView.bounds.height / 2)
+            
+            let deltaX = 10 * rawDeltaXRate
+            let deltaY = 10 * rawDeltaYRate
             
             let animationGroup = CAAnimationGroup()
             animationGroup.duration = 0.1

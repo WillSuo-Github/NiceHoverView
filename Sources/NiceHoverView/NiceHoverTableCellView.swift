@@ -16,10 +16,12 @@ open class NiceHoverTableCellView: NSTableCellView {
     }()
     
     open override func mouseEntered(with event: NSEvent) {
+        updateHoverColor()
         hoverHelper.showHoverLayer(with: event, onView: self)
     }
     
     open override func mouseExited(with event: NSEvent) {
+        updateHoverColor()
         hoverHelper.hideHoverLayer(with: event, onView: self)
     }
     

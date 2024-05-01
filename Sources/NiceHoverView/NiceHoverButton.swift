@@ -12,9 +12,6 @@ open class NiceHoverButton: NSButton {
     
     private lazy var hoverLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
-        let rect = hoverRect()
-        let bezierPath = NSBezierPath(roundedRect: rect, xRadius: xRadius(), yRadius: yRadius())
-        layer.path = bezierPath.cgPath()
         return layer
     }()
     
@@ -31,6 +28,14 @@ open class NiceHoverButton: NSButton {
     open override func updateLayer() {
         super.updateLayer()
         updateHoverColor()
+    }
+    
+    open override func layout() {
+        super.layout()
+        
+        let rect = hoverRect()
+        let bezierPath = NSBezierPath(roundedRect: rect, xRadius: xRadius(), yRadius: yRadius())
+        hoverLayer.path = bezierPath.cgPath()
     }
     
     private func updateHoverColor() {

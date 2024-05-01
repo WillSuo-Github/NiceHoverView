@@ -5,20 +5,23 @@ open class NiceHoverView: NSView {
     
     private lazy var hoverLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
-        let rect = hoverRect()
-        let bezierPath = NSBezierPath(roundedRect: rect, xRadius: xRadius(), yRadius: yRadius())
-        layer.path = bezierPath.cgPath()
         return layer
     }()
     
     open override func mouseEntered(with event: NSEvent) {
-        updateHoverColor()
         hoverHelper.showHoverLayer(with: event, onView: self)
     }
     
     open override func mouseExited(with event: NSEvent) {
-        updateHoverColor()
         hoverHelper.hideHoverLayer(with: event, onView: self)
+    }
+    
+    open override func layout() {
+        super.layout()
+        
+        let rect = hoverRect()
+        let bezierPath = NSBezierPath(roundedRect: rect, xRadius: xRadius(), yRadius: yRadius())
+        hoverLayer.path = bezierPath.cgPath()
     }
     
     open override func updateLayer() {
@@ -27,7 +30,7 @@ open class NiceHoverView: NSView {
     }
     
     private func updateHoverColor() {
-        NSApplication.shared.effectiveAppearance.performAsCurrentDrawingAppearance {
+        effectiveAppearance.performAsCurrentDrawingAppearance {
             hoverLayer.fillColor = hoverColor().cgColor
         }
     }

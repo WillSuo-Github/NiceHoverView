@@ -17,12 +17,12 @@ open class NiceHoverTableCellView: NSTableCellView {
     
     open override func mouseEntered(with event: NSEvent) {
         updateHoverColor()
-        hoverHelper.showHoverLayer(with: event, onView: self)
+        hoverHelper.showHoverLayer(with: event, onView: self, useAnimation: useAnimation())
     }
     
     open override func mouseExited(with event: NSEvent) {
         updateHoverColor()
-        hoverHelper.hideHoverLayer(with: event, onView: self)
+        hoverHelper.hideHoverLayer(with: event, onView: self, useAnimation: useAnimation())
     }
     
     open override func updateLayer() {
@@ -58,6 +58,10 @@ open class NiceHoverTableCellView: NSTableCellView {
     
     open func yRadius() -> CGFloat {
         return 6
+    }
+    
+    open func useAnimation() -> Bool {
+        return true
     }
 }
 

@@ -12,4 +12,6 @@ public protocol HoverProtocol {
     func hoverRect() -> NSRect
     func xRadius() -> CGFloat
     func yRadius() -> CGFloat
+    
+    func useAnimation() -> Bool
 }

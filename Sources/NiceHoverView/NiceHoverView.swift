@@ -10,12 +10,12 @@ open class NiceHoverView: NSView {
     
     open override func mouseEntered(with event: NSEvent) {
         updateHoverColor()
-        hoverHelper.showHoverLayer(with: event, onView: self)
+        hoverHelper.showHoverLayer(with: event, onView: self, useAnimation: useAnimation())
     }
     
     open override func mouseExited(with event: NSEvent) {
         updateHoverColor()
-        hoverHelper.hideHoverLayer(with: event, onView: self)
+        hoverHelper.hideHoverLayer(with: event, onView: self, useAnimation: useAnimation())
     }
     
     open override func layout() {
@@ -51,6 +51,10 @@ open class NiceHoverView: NSView {
     
     open func yRadius() -> CGFloat {
         return 20
+    }
+    
+    open func useAnimation() -> Bool {
+        return true
     }
 }
 

@@ -19,10 +19,18 @@ open class HoverHelper: NSObject {
         super.init()
     }
     
-    func showHoverLayer(with event: NSEvent, onView: NSView) {
+    func showHoverLayer(with event: NSEvent, onView: NSView, useAnimation: Bool) {
         guard isMouseIn == false else { return }
-        
         isMouseIn = true
+        
+        if useAnimation {
+            showHoverLayerWithAnimation(with: event, onView: onView)
+        } else {
+            showHoverLayerWithoutAnimation(onView: onView)
+        }
+    }
+    
+    private func showHoverLayerWithAnimation(with event: NSEvent, onView: NSView) {
         let location = event.locationInWindow
         let entryPoint = onView.convert(location, from: nil)
         
@@ -55,10 +63,25 @@ open class HoverHelper: NSObject {
         hoverLayer.add(positionAnimation, forKey: "position")
     }
     
-    func hideHoverLayer(with event: NSEvent, onView: NSView) {
+    private func showHoverLayerWithoutAnimation(onView: NSView) {
+        if hoverLayer.superlayer == nil {
+            onView.wantsLayer = true
+            onView.layer?.addSublayer(hoverLayer)
+        }
+    }
+    
+    func hideHoverLayer(with event: NSEvent, onView: NSView, useAnimation: Bool) {
         guard isMouseIn else { return }
-        
         isMouseIn = false
+        
+        if useAnimation {
+            hideHoverLayerWithAnimation(with: event, onView: onView)
+        } else {
+            hideHoverLayerWithoutAnimation(onView: onView)
+        }
+    }
+    
+    private func hideHoverLayerWithAnimation(with event: NSEvent, onView: NSView) {
         let location = event.locationInWindow
         let exitPoint = onView.convert(location, from: nil)
         
@@ -91,6 +114,10 @@ open class HoverHelper: NSObject {
             
             hoverLayer.add(animationGroup, forKey: "fadeOut")
         }
+    }
+    
+    private func hideHoverLayerWithoutAnimation(onView: NSView) {
+        hoverLayer.removeFromSuperlayer()
     }
     
     func triggerMouseExit(onView: NSView) {
